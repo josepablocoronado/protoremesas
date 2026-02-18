@@ -236,4 +236,15 @@ body.home-bg .phone {
   );
 }
 
-@media (max-width: 400px) { .phone { width: 100%; height: 100svh; } body { padding: 0; } }
+@media (max-width: 768px) {
+  .phone { 
+    width: 100%; 
+    height: 100svh;    /* ocupa toda la altura de la pantalla */
+    border-radius: 0;  /* sin bordes redondeados en móvil real */
+    box-shadow: none;  /* sin sombra en móvil real */
+  }
+  body { 
+    padding: 0;        /* sin padding que achique el contenedor */
+    align-items: flex-start; /* alinea desde arriba */
+  }
+}
