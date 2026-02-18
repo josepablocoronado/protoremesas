@@ -21,7 +21,7 @@
   document.querySelectorAll('.pin-key').forEach(k=>k.addEventListener('click',function(){
     const v=this.dataset.v;
     if(v==='X'){if(pin.length>0){document.getElementById('d'+pin.length).classList.remove('filled');pin=pin.slice(0,-1);}}
-    else if(v==='OK'){if(pin.length===4)go('pantalla-05.html');}
-    else if(pin.length<4){pin+=v;document.getElementById('d'+pin.length).classList.add('filled');if(pin.length===4)setTimeout(()=>go('pantalla-05.html'),400);}
+    else if(v==='OK'){if(pin.length===4)go('pantalla-04.html');}
+    else if(pin.length<4){pin+=v;document.getElementById('d'+pin.length).classList.add('filled');if(pin.length===4)setTimeout(()=>go('pantalla-04.html'),400);}
   }));
 </script></body></html>
