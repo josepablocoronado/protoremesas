@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Ingresa Clave</title><link rel="stylesheet" href="css/styles.css"></head>
+<body><div class="phone" style="background:#FF6B00;">
+  <div class="pin-area">
+    <div class="pin-header-text">Remesas</div>
+    <div class="pin-main-label">Ingresa tu clave</div>
+    <div class="pin-dots">
+      <div class="pin-dot" id="d1"></div><div class="pin-dot" id="d2"></div>
+      <div class="pin-dot" id="d3"></div><div class="pin-dot" id="d4"></div>
+    </div>
+  </div>
+  <div class="pin-keyboard">
+    <div class="pin-key" data-v="1">1</div><div class="pin-key" data-v="2">2</div><div class="pin-key" data-v="3">3</div>
+    <div class="pin-key" data-v="4">4</div><div class="pin-key" data-v="5">5</div><div class="pin-key" data-v="6">6</div>
+    <div class="pin-key" data-v="7">7</div><div class="pin-key" data-v="8">8</div><div class="pin-key" data-v="9">9</div>
+    <div class="pin-key key-red" data-v="X">✕</div><div class="pin-key key-zero" data-v="0">0</div><div class="pin-key key-green" data-v="OK">✓</div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+  let pin='';
+  document.querySelectorAll('.pin-key').forEach(k=>k.addEventListener('click',function(){
+    const v=this.dataset.v;
+    if(v==='X'){if(pin.length>0){document.getElementById('d'+pin.length).classList.remove('filled');pin=pin.slice(0,-1);}}
+    else if(v==='OK'){if(pin.length===4)go('pantalla-11.html');}
+    else if(pin.length<4){pin+=v;document.getElementById('d'+pin.length).classList.add('filled');if(pin.length===4)setTimeout(()=>go('pantalla-11.html'),400);}
+  }));
+</script></body></html>

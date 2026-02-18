@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Conversión Moneda</title><link rel="stylesheet" href="css/styles.css"></head>
+<body><div class="phone">
+  <div class="header-nav"><button class="back-btn" onclick="go('pantalla-11.html')">←</button><span class="title">Remesas</span></div>
+  <div class="content">
+    <div class="dest-card">
+      <img src="img/destinatario.png" alt="destinatario" style="width:24px;height:24px;object-fit:contain;">
+      <div><div class="dest-name" style="font-size:13px;color:#666;font-weight:400;">Destinatario:</div><div class="dest-name">Alejandro Rojas</div><div class="dest-meta">Banco Credito del Peru · Depósito en cuenta</div></div>
+    </div>
+    <div class="currency-row">
+      <label class="clabel">Envía</label>
+      <div class="currency-box"><span class="c-flag">🇨🇱</span><span class="c-code">CLP</span><input class="c-amount" id="clp" type="text" placeholder="$0" inputmode="numeric"></div>
+    </div>
+    <div class="currency-row">
+      <label class="clabel">Recibe</label>
+      <div class="currency-box"><span class="c-flag">🇵🇪</span><span class="c-code">PEN</span><input class="c-amount" id="pen" type="text" placeholder="$0" readonly></div>
+    </div>
+    <div class="rate-badge"><span>💱</span><span>El monto a recibir incluye el cobro de impuestos y comisiones.</span></div>
+    <button class="btn btn-primary" id="btn" disabled>Continuar</button>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+  const ci=document.getElementById('clp'),pi=document.getElementById('pen'),btn=document.getElementById('btn');
+  ci.addEventListener('input',function(){
+    const v=this.value.replace(/\D/g,'');
+    this.value=v?'$'+fmt(v):'';
+    pi.value=v?'$'+fmt(Math.round(v*0.0037)):'';
+    btn.disabled=!v||parseInt(v)===0;
+  });
+  btn.addEventListener('click',()=>go('pantalla-13.html'));
+</script></body></html>

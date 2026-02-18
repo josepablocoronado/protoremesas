@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Datos Destinatario</title><link rel="stylesheet" href="css/styles.css"></head>
+<body><div class="phone">
+  <div class="header-nav"><button class="back-btn" onclick="go('pantalla-03.html')">←</button><span class="title">Remesas</span></div>
+  <div class="content">
+    <div class="form-header"><img src="img/destinatario.png" alt="destinatario" style="width:32px;height:32px;object-fit:contain;"><span class="form-header-title">Datos de destinatario</span></div>
+    <div class="form-group"><label class="form-label">Tipo de documento</label>
+      <div class="form-select-wrap"><select class="form-select" id="tipo"><option value="">Selecciona el tipo de documento</option><option value="cedula">Cédula de identidad</option><option value="pasaporte">Pasaporte</option></select></div>
+    </div>
+    <div class="form-group"><label class="form-label">Número de documento de identidad</label><input type="text" class="form-input" id="ndoc" placeholder="Ej. 22.256.325-6"></div>
+    <button class="btn btn-primary mt-2" id="btn" disabled>Continuar</button>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+  const t=document.getElementById('tipo'), n=document.getElementById('ndoc'), b=document.getElementById('btn');
+  function chk(){b.disabled=!(t.value&&n.value.trim());}
+  t.addEventListener('change',chk); n.addEventListener('input',chk);
+  b.addEventListener('click',()=>{save('tipo',t.value);save('ndoc',n.value);go('pantalla-05.html');});
+</script></body></html>

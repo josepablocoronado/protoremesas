@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Contraseña Operador</title><link rel="stylesheet" href="css/styles.css"></head>
+<body><div class="phone">
+  <div class="op-screen">
+    <div class="op-header-area">
+      <div class="op-title">Ingresa Contraseña<br>Operador</div>
+      <label class="op-label">Contraseña Operador</label>
+      <input type="password" class="op-input" id="opInput" placeholder="" readonly>
+    </div>
+    <div class="op-keyboard">
+      <div class="op-key" data-v="1">1</div><div class="op-key" data-v="2">2</div><div class="op-key" data-v="3">3</div>
+      <div class="op-key" data-v="4">4</div><div class="op-key" data-v="5">5</div><div class="op-key" data-v="6">6</div>
+      <div class="op-key" data-v="7">7</div><div class="op-key" data-v="8">8</div><div class="op-key" data-v="9">9</div>
+      <div class="op-key key-zero" data-v="0">0</div>
+    </div>
+    <div class="op-btn-wrap"><button class="op-btn" id="opBtn">Ingresar</button></div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+  let v=''; const inp=document.getElementById('opInput'), btn=document.getElementById('opBtn');
+  document.querySelectorAll('.op-key').forEach(k=>k.addEventListener('click',function(){
+    if(v.length<6){v+=this.dataset.v; inp.value=v;}
+    btn.classList.toggle('active',v.length>=4);
+  }));
+  btn.addEventListener('click',()=>{if(v.length>=4)go('pantalla-19.html');});
+</script></body></html>

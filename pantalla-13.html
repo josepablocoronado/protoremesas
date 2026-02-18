@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Resumen Transacción</title><link rel="stylesheet" href="css/styles.css"></head>
+<body><div class="phone">
+  <div class="header-nav"><button class="back-btn" onclick="go('pantalla-12.html')">←</button><span class="title">Remesas</span></div>
+  <div class="content">
+    <div class="rt-label">Resumen de la transacción</div>
+    <div class="rt-card">
+      <div class="rt-row"><span class="rt-flag">🇨🇱</span><div class="rt-content"><div class="rt-sub">Cliente paga</div><div class="rt-val">$100.000</div></div></div>
+      <div class="rt-row"><span class="rt-flag">🇵🇪</span><div class="rt-content"><div class="rt-sub">Destinatario recibe</div><div class="rt-val">$372</div></div></div>
+    </div>
+    <div class="rt-card">
+      <div class="rt-row"><div class="rt-content"><div class="rt-sub">Moneda recepción:</div><div class="rt-val" style="font-size:13px;font-weight:400;">Soles peruanos</div></div></div>
+      <div class="rt-row"><div class="rt-content"><div class="rt-sub">Comisión:</div><div class="rt-val" style="font-size:13px;font-weight:400;">CLP $ 1200</div></div></div>
+      <div class="rt-row"><div class="rt-content"><div class="rt-sub">IVA:</div><div class="rt-val" style="font-size:13px;font-weight:400;">CLP $ 800</div></div></div>
+    </div>
+    <div class="retorno-label">Selecciona una cuenta de retorno <span class="help-circle">?</span></div>
+    <div class="retorno-select-wrap">
+      <select class="retorno-select"><option>Cuenta corriente Nº ****8326</option><option>CuentaRUT Nº ****1234</option></select>
+    </div>
+    <div class="obligatorio">Obligatorio</div>
+    <label class="chk-row"><input type="checkbox" id="chk"><label for="chk">Confirmo que los datos son correctos</label></label>
+    <button class="btn btn-primary" id="btn" disabled>Continuar</button>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+  const chk=document.getElementById('chk'),btn=document.getElementById('btn');
+  chk.addEventListener('change',()=>btn.disabled=!chk.checked);
+  btn.addEventListener('click',()=>go('pantalla-14.html'));
+</script></body></html>

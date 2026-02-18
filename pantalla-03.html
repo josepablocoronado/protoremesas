@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>RUT Cliente</title><link rel="stylesheet" href="css/styles.css"></head>
+<body><div class="phone">
+  <div class="header-nav"><button class="back-btn" onclick="go('pantalla-02.html')">←</button><span class="title">Remesas</span></div>
+  <div class="content">
+    <div class="form-group"><label class="form-label">RUT del cliente</label><input type="text" class="form-input" id="rut" placeholder="Ingresa el RUT del cliente" readonly></div>
+    <div class="numeric-keyboard">
+      <div class="key" data-v="1">1</div><div class="key" data-v="2">2</div><div class="key" data-v="3">3</div>
+      <div class="key" data-v="4">4</div><div class="key" data-v="5">5</div><div class="key" data-v="6">6</div>
+      <div class="key" data-v="7">7</div><div class="key" data-v="8">8</div><div class="key" data-v="9">9</div>
+      <div class="key" data-v="K">K</div><div class="key" data-v="0">0</div><div class="key key-del" data-v="⌫">⌫</div>
+    </div>
+    <button class="btn btn-primary mt-3" id="btn" disabled onclick="go('tapeo.html')">Ingresar</button>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script>
+  let v=''; const inp=document.getElementById('rut'), btn=document.getElementById('btn');
+  document.querySelectorAll('.key').forEach(k=>k.addEventListener('click',function(){
+    const c=this.dataset.v;
+    if(c==='⌫'){v=v.slice(0,-1);}else if(v.length<10){v+=c;}
+    inp.value=v; btn.disabled=v.length<7;
+  }));
+</script></body></html>
