@@ -1,5 +1,13 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Resumen Final</title><link rel="stylesheet" href="css/styles.css"></head>
-<body><div class="phone">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Resumen Final</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="phone">
   <div class="final-screen">
     <div class="final-icon">👍</div>
     <div class="final-title">Solicitud de envío de dinero al extranjero realizado con éxito</div>
@@ -19,9 +27,19 @@
       <div class="fr-row"><span class="fr-icon"></span><div class="fr-content"><div class="fr-label">IVA:</div><div class="fr-value">$760</div></div></div>
       <div class="fr-row"><span class="fr-icon"></span><div class="fr-content"><div class="fr-label">Monto pagado:</div><div class="fr-value">$100.000</div></div></div>
     </div>
-    <div class="alert-info"><span class="ai-icon">ℹ</span><p>Puedes revisar el estado del envío de dinero desde la APP BancoEstado.</p></div>
+    <div class="alert-info"><span class="ai-icon">i</span><p>Puedes revisar el estado del envío de dinero desde la APP BancoEstado.</p></div>
     <div class="print-q">¿Deseas imprimir comprobante?</div>
     <button class="btn btn-primary" onclick="alert('Imprimiendo comprobante...')">Imprimir comprobante</button>
     <button class="btn-link mt-1" style="display:block;text-align:center;width:100%;cursor:pointer;" onclick="clearAll();go('pantalla-01.html')">Salir</button>
   </div>
-</div><script src="js/app.js"></script></body></html>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  setTimeout(function() {
+    window.location.href = 'gracias.html';
+  }, 3000);
+</script>
+
+</body>
+</html>
